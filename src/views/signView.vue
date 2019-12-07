@@ -1,12 +1,8 @@
 <template>
-  <v-container class="fill-height" fluid>
+  <v-container id="wrapper" class="fill-height" fluid>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
-        <component
-          v-bind:is="currentSign"
-          @clicked="changeSign"
-          class="animated fadeIn"
-        />
+        <component v-bind:is="currentSign" @clicked="changeSign" class="animated fadeIn" />
       </v-col>
     </v-row>
   </v-container>
@@ -37,5 +33,10 @@ export default {
 <style lang="scss" scoped>
 html {
   overflow: hidden !important;
+}
+
+#wrapper {
+  background: url("../assets/code4.jpg") bottom;
+  background-size: cover;
 }
 </style>

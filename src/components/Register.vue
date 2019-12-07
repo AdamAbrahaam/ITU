@@ -1,10 +1,17 @@
 <template>
   <v-card class="elevation-12">
-    <v-toolbar color="primary" dark flat>
+    <v-toolbar color="blue" dark flat>
       <v-toolbar-title>Sign up!</v-toolbar-title>
     </v-toolbar>
     <v-card-text>
       <v-form>
+        <v-text-field
+          v-model="regInfo.name"
+          label="Display name"
+          prepend-icon="mdi-square-edit-outline"
+          type="text"
+        />
+
         <v-text-field
           v-model="regInfo.email"
           label="E-mail"
@@ -24,7 +31,7 @@
     <v-card-actions class="mx-2">
       <a @click="changeRequest('Login')">Have an account? Login!</a>
       <v-spacer />
-      <v-btn color="primary" @click="register">Register</v-btn>
+      <v-btn dark color="blue" @click="register">Register</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -35,6 +42,7 @@ export default {
   data() {
     return {
       regInfo: {
+        name: "",
         email: "",
         password: ""
       }
@@ -45,8 +53,13 @@ export default {
       this.$emit("clicked", to);
     },
     async register() {
-      let error = await this.$store.dispatch("users/register", this.regInfo);
-      console.log(error);
+      let response = await this.$store.dispatch("users/register", this.regInfo);
+
+      if (response.message) {
+        this.errorMsg = response.message;
+      } else {
+        this.$router.push("/home");
+      }
     }
   }
 };

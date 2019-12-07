@@ -1,52 +1,46 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
+    <v-content id="wrap">
       <router-view />
     </v-content>
   </v-app>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "App",
-
-  data: () => ({
-    //
-  })
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState({
+      currentUser: state => state.users.currentUser
+    })
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("users/logout");
+      this.$router.push("/");
+    }
+  }
 };
 </script>
 
-<style></style>
+<style lang="scss" >
+body {
+  background-color: #e7e6e3 !important;
+}
+#wrap {
+  background-color: #e7e6e3;
+}
+
+.v-application .v-data-table th {
+  text-align: center !important;
+  font-size: 15px !important;
+}
+
+.v-application .v-data-table td {
+  text-align: center !important;
+}
+</style>>

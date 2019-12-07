@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import signView from "../views/signView.vue";
+import Home from "../views/Home.vue";
+import Writer from "../views/Writer.vue";
 
 Vue.use(VueRouter);
 
@@ -11,8 +13,19 @@ const routes = [
   },
   {
     path: "/",
-    name: "home",
+    name: "signView",
     component: signView
+  },
+  {
+    path: "/writer",
+    name: "writer",
+    component: Writer,
+    props: true
+  },
+  {
+    path: "/home",
+    name: "home",
+    component: Home
   }
 ];
 

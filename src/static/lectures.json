@@ -1,0 +1,19 @@
+{
+  "C": [
+    "#include <stdio.h>\nint main() {\n  int year;\n  printf(\"Enter a year: \");\n  scanf(\"%d\", &year);\n  if (year % 4 == 0) {\n    if (year % 100 == 0) {\n      if (year % 400 == 0)\n        printf(\"%d is a leap year.\", year);\n      else\n        printf(\"%d is not a leap year.\", year);\n    } else\n        printf(\"%d is a leap year.\", year);\n  } else\n    printf(\"%d is not a leap year.\", year);\n  return 0;\n}",
+    "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\");\n  return 0;\n}",
+    "#include <stdio.h>\nint main() {\n  int number1, number2, sum;\n  printf(\"Enter two integers: \");\n  scanf(\"%d %d\", &number1, &number2);\n  sum = number1 + number2;\n  printf(\"%d + %d = %d\", number1, number2, sum);\n  return 0;\n}"
+  ],
+
+  "Java": [
+    "public class Factorial {\n  public static void main(String[] args) {\n    int num = 10;\n    long factorial = 1;\n    for(int i = 1; i <= num; ++i)\n      {\n        factorial *= i;\n      }\n    System.out.printf(\"Factorial = %d\", factorial);\n  }\n}",
+    "public class SwapNumbers {\n  public static void main(String[] args) {\n    float first = 1.20f, second = 2.45f;\n\n    System.out.println(\"--Before swap--\");\n    System.out.println(\"First number = \" + first);\n    System.out.println(\"Second number = \" + second);\n\n    float temporary = first;\n    first = second;\n    second = temporary;\n\n    System.out.println(\"--After swap--\");\n    System.out.println(\"First number = \" + first);\n    System.out.println(\"Second number = \" + second);\n  }\n}",
+    "import java.util.Scanner;\npublic class HelloWorld {\n  public static void main(String[] args) {\n    Scanner reader = new Scanner(System.in);\n    System.out.print(\"Enter a number: \");\n    int number = reader.nextInt();\n    System.out.println(\"You entered: \" + number);\n  }\n}"
+  ],
+
+  "php": [
+    "<?php\n$num = 4;\n$factorial = 1;\nfor ($x=$num; $x>=1; $x--)\n{\n  $factorial = $factorial * $x;\n}\necho \"Factorial of $num is $factorial\";\n?>",
+    "<?php\n$num = 14597;\n$sum=0; $rem=0;\nfor ($i =0; $i<=strlen($num);$i++)\n{\n  $rem=$num%10;\n  $sum = $sum + $rem;\n  $num=$num/10;\n}\necho \"Sum of digits 14597 is $sum\";\n?>",
+    "<?php\n$today = date(\"D\");\nswitch($today){\n  case \"Mon\":\n    echo \"Today is Monday. Clean your house.\";\n    break;\n  case \"Tue\":\n    echo \"Today is Tuesday. Buy some food.\";\n    break;\n  case \"Wed\":\n    echo \"Today is Wednesday. Visit a doctor.\";\n    break;\n  default:\n    echo \"No information available for that day.\";\n    break;\n}\n?>"
+  ]
+}
