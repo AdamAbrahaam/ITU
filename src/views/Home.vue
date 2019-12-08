@@ -77,6 +77,13 @@
                 </div>
               </v-btn>
             </v-row>
+            <v-row class="mx-3 mt-6 mb-6">
+              <v-btn width="96.5%" height="100px" color="white" @click="guide = true">
+                <div class="d-flex flex-column blue--text">
+                  <v-icon x-large class="mb-2">mdi-keyboard-outline</v-icon>Keyboard guide
+                </div>
+              </v-btn>
+            </v-row>
           </div>
         </v-col>
       </v-row>
@@ -88,6 +95,10 @@
 
     <v-dialog v-model="chooseLecture" overlay-opacity="0.8" max-width="600px">
       <ChooseLecture @clicked="closeModal" />
+    </v-dialog>
+
+    <v-dialog v-model="guide" overlay-opacity="0.8" max-width="800px">
+      <v-img src="@/assets/keyboard.png"></v-img>
     </v-dialog>
   </div>
 </template>
@@ -103,6 +114,7 @@ export default {
     return {
       addLecture: false,
       chooseLecture: false,
+      guide: false,
       headers: [
         { text: "Name", value: "name" },
         { text: "Language", value: "language" },

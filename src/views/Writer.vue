@@ -16,7 +16,11 @@
           <p>Time: {{ timer.minutes.innerHTML }}:{{ timer.seconds.innerHTML }}</p>
         </div>
       </div>
+      <div class="display-2">
+        <v-btn large outlined class="subtitle-1 white--text" @click="$router.push('/home')">continue</v-btn>
+      </div>
     </v-card>
+
     <div id="areas" class="d-flex pt-12">
       <div>
         <div class="textarea">
