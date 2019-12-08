@@ -12,8 +12,9 @@
       <div class="display-2">
         Statistics
         <div class="title d-flex flex-row justify-space-between">
-          <p>Errors: {{ errors }}</p>
-          <p>Time: {{ timer.minutes.innerHTML }}:{{ timer.seconds.innerHTML }}</p>
+          <p class="mr-3">Errors: {{ errors }}</p>
+          <v-spacer></v-spacer>
+          <p class="ml-3">Time: {{ timer.minutes.innerHTML }}:{{ timer.seconds.innerHTML }}</p>
         </div>
       </div>
       <div class="display-2">
