@@ -8,6 +8,7 @@
         <v-text-field
           v-model="logInfo.email"
           label="E-mail"
+          id="email"
           prepend-icon="mdi-account"
           type="text"
         />
